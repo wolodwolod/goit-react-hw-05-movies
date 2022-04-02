@@ -1,0 +1,23 @@
+.navbar {
+    padding: 15px 0;
+}
+
+.row {
+    display: flex;
+   align-items: center;
+//    padding-left: 50px;
+}
+    
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+}
+
+.linkActive {
+    composes: link;
+    color: red;
+}
