@@ -2,7 +2,7 @@ const MoviesPage = () => {
     return (
         <main>
             <div className="container">
-            <h2>Movies Page</h2>
+            <h2 className="page-title">Movies Page</h2>
             </div>
         </main>
         
