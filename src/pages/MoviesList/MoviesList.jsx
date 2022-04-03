@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import s from "./movies-list.module.scss"
+// import s from "./movies-list.module.scss"
 
 const MoviesList = ({ movies }) => {
     const elements = movies.map(movie => (
         <Link to={`/movies/${movie.id}`} key={movie.id}>
-            <li className={s.item} >
-{movie.original_title}
+            <li className="list-item" >
+{movie.title}
             </li>
         </Link>
         
     ))
     return (
         <div>
-       <h2 className="page-title">Trending today</h2>
+       <h1>Trending today</h1>
         <ul>
             {elements}
             </ul>
