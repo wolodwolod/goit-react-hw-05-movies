@@ -1,14 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
-import s from "./single-movie.module.scss";
+import s from "./movie-details.module.scss";
 
 
 
 const BASE_URL = "https://image.tmdb.org/t/p/w200"
 
-const SingleMovie = (data) => {
+const MovieDetails = ({ data }) => {
     console.log(data);
 
-    const { id, poster_path, title, tagline, release_date, vote_average, overview, genres } = data.data;
+    const { id, poster_path, title, tagline, release_date, vote_average, overview, genres } = data;
     
     console.log(genres);
     console.log(release_date);
@@ -32,9 +32,9 @@ const listOfGenres = [...new Set(genres.map(genre => genre.name))];
                 <div className={s.add}>
                     <h4 className={s.title}> Additional information</h4>
                     <ul>
-                    <li className="list-item"><Link to={`/movies/${id}/cast`}>Cast</Link></li>
-                        <li className="list-item"><Link to={`/movies/${id}/reviews`}>Reviews</Link></li>
-                        <Outlet />
+                     <li className="list-item"><Link to={`/movies/${id}/cast`}>Cast</Link></li>
+                     <li className="list-item"><Link to={`/movies/${id}/reviews`}>Reviews</Link></li>
+                    <Outlet />
                     </ul>         
                 </div>  
             
@@ -43,4 +43,4 @@ const listOfGenres = [...new Set(genres.map(genre => genre.name))];
     )
 };
 
-export default SingleMovie;
+export default MovieDetails;
