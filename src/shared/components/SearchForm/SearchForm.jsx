@@ -1,4 +1,5 @@
 import { useState, useEffect, createRef, memo } from "react";
+import s from "./search-form.module.scss"
 
 const SearchForm = ({onSubmit}) => {
     // console.log("Render")
@@ -36,8 +37,8 @@ console.log(form.search)
     }
 
     return (
-        <form onSubmit={handleSubmit} action="">
-            <input ref={inputRef} onChange={handleChange} value={form.search} type="text" name="search" placeholder="Search" />
+        <form className={s.searchForm } onSubmit={handleSubmit} action="">
+            <input ref={inputRef} onChange={handleChange} value={form.search} type="text" name="search" placeholder="Movie title" />
             <button type="submit">Search</button>
         </form>
     )

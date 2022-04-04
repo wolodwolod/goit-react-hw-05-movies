@@ -48,7 +48,7 @@ const [state, setState] = useState({
                 {loading && <p>...Loading</p>}
             
                 {Boolean(reviews.length) ? <ReviewsContent reviews={reviews} /> :
-                    <p>We don't have any reviews for this movie</p>}            
+                    <p style={{ marginTop: '15px' }}>We don't have any reviews for this movie</p>}            
 
             </div>           
         </main>      

@@ -16,6 +16,7 @@ const listOfGenres = [...new Set(genres.map(genre => genre.name))];
 
     return (
         <main>
+            <div className="container">
           <div className={s.basic}>
                     <div className={s.basicPoster}>
                         <img className={s.basicPoster__Img} src={`${BASE_URL}${poster_path}`} alt={tagline} />
@@ -31,13 +32,13 @@ const listOfGenres = [...new Set(genres.map(genre => genre.name))];
                 </div>
                 <div className={s.add}>
                     <h4 className={s.title}> Additional information</h4>
-                    <ul>
+                    <ul className={s.addList}>
                      <li className="list-item"><Link to={`/movies/${id}/cast`}>Cast</Link></li>
                      <li className="list-item"><Link to={`/movies/${id}/reviews`}>Reviews</Link></li>
                     <Outlet />
                     </ul>         
                 </div>  
-            
+            </div>
         </main>
        
     )

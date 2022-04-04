@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getMovieDetails } from "../../shared/services/movies";
 import MovieDetails from "./MovieDetails";
+import s from "./movie-details.module.scss";
 
 const MovieDetailsPage = () => {
 
@@ -47,7 +48,7 @@ const [state, setState] = useState({
                
                 {loading && <p>...Loading</p>}
                
-        <button onClick={goBack}>&#8592; Go back</button>
+        <button className={s.button} onClick={goBack}>&#8592; Go back</button>
                 {Boolean(Object.keys(data).length) && <MovieDetails data={data} />}    
 
             </div>

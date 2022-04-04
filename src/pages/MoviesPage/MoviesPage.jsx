@@ -49,10 +49,10 @@ const MoviesPage = () => {
         }
            
         )
-        console.log(search);
-        console.log(query);
+        // console.log(search);
+        // console.log(query);
         
-    }, [query, state]);
+    }, [state]);
 
 
     return (
