@@ -47,7 +47,7 @@ const [state, setState] = useState({
                
                 {loading && <p>...Loading</p>}
                
-                <button onClick={goBack}>Go back</button>
+        <button onClick={goBack}>&#8592; Go back</button>
                 {Boolean(Object.keys(data).length) && <MovieDetails data={data} />}    
 
             </div>

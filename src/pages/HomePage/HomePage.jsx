@@ -38,6 +38,7 @@ const HomePage = () => {
             <div className="container">
                 
                 {loading && <p>...Loading</p>}
+                {Boolean(movies.length) &&  <h1>Trending today</h1>}
                 {Boolean(movies.length) && <MoviesList movies={movies} />}
             </div>
         </main>
