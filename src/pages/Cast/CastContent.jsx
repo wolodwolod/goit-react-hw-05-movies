@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import s from "./cast.module.scss"
 
 const BASE_URL = "https://image.tmdb.org/t/p/w200"
@@ -22,5 +24,16 @@ const CastContent = ({ cast }) => {
        
     )
 };
+
+CastContent.propTypes = {
+  cast: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      profile_path: PropTypes.string,
+      name: PropTypes.string,
+      character: PropTypes.string,
+    })
+  ),
+  };
 
 export default CastContent;

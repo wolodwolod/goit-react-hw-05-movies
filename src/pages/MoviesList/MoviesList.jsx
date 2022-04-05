@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types';
+
 import { Link } from "react-router-dom";
 // import s from "./movies-list.module.scss"
+
 
 const MoviesList = ({ movies }) => {
     const elements = movies.map(movie => (
@@ -19,5 +22,15 @@ const MoviesList = ({ movies }) => {
         </div>
     )
 };
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,      
+    })
+  ),
+  };
+
 
 export default MoviesList;

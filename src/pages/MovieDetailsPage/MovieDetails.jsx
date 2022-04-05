@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 import { Link, Outlet } from "react-router-dom";
+
 import s from "./movie-details.module.scss";
 
 
@@ -43,5 +46,20 @@ const listOfGenres = [...new Set(genres.map(genre => genre.name))];
        
     )
 };
+
+MovieDetails.propTypes = {
+//    PropTypes.objectOf(
+    data:PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      tagline: PropTypes.string,
+      release_date: PropTypes.string,
+      vote_average: PropTypes.number,
+      overview: PropTypes.string,
+        genres: PropTypes.arrayOf(PropTypes.shape({
+          name: PropTypes.string.isRequired
+      })),
+    })  
+  };
 
 export default MovieDetails;

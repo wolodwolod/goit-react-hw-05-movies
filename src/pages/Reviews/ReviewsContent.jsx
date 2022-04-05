@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
+
 import s from "./reviews.module.scss"
 
 const ReviewsContent = ({ reviews }) => {
     // const reviews_5 = reviews.slice(0, 5);
-    // console.log(reviews);
+    console.log(reviews);
 
     return (
       
@@ -19,5 +21,14 @@ const ReviewsContent = ({ reviews }) => {
        
     )
 };
+
+ReviewsContent.propTypes = {
+    reviews: PropTypes.arrayOf
+        (PropTypes.shape({
+      id: PropTypes.string,
+      author: PropTypes.string,      
+      content: PropTypes.string,      
+    })),
+  };
 
 export default ReviewsContent;
