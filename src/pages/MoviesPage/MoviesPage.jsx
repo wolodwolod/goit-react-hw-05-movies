@@ -31,7 +31,7 @@ const MoviesPage = () => {
                 
                 setState(prevState => ({
                     ...prevState,
-                    movies: [...prevState.movies, ...data.results],
+                    movies: [...data.results],
                     loading: false
                 }))
             } catch (error) {
