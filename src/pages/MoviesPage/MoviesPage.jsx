@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
+// import { useRef } from "react";
 // import MoviesList from "pages/MoviesList";
 import { searchMovies } from "../../shared/services/movies";
 import MoviesList from "pages/MoviesList";
@@ -14,13 +15,17 @@ const MoviesPage = () => {
     });
     const { query, movies, loading, error } = state;
 
-    const firstRenderRef = useRef(true);
+    // const firstRenderRef = useRef(true);
 
     useEffect(() => {
 
-        if (firstRenderRef.current) {
-    firstRenderRef.current = false;
-        } else {
+    //     if (firstRenderRef.current) {
+    // firstRenderRef.current = false;
+    //     }
+        if(!query){
+   return;
+}
+        else {
             const fetchMovies = async () => {
                                    
             try {
