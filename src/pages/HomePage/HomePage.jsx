@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import MoviesList from "pages/MoviesList";
+import MoviesList from "shared/components/MoviesList";
 import { getMovies } from "../../shared/services/movies";
 
 const HomePage = () => {

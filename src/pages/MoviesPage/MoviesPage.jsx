@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 // import { useRef } from "react";
 // import MoviesList from "pages/MoviesList";
 import { searchMovies } from "../../shared/services/movies";
-import MoviesList from "pages/MoviesList";
+import MoviesList from "shared/components/MoviesList";
 import SearchForm from "shared/components/SearchForm";
 import s from "./movies-page.module.scss";
 
