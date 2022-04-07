@@ -40,7 +40,7 @@ const [state, setState] = useState({
     const { data, loading } = state;
 
     const location = useLocation()
-    const from = location.state?.from;
+    const from = location.state?.from || "/";
     console.log(from)
     
     const navigate = useNavigate();
