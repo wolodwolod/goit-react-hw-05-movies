@@ -56,8 +56,8 @@ const [state, setState] = useState({
         <button className={s.button} onClick={goBack}>&#8592; Go back</button>
                 {Boolean(Object.keys(data).length) && <MovieDetails data={data} />}
 
-                <li className="list-item"><Link to={`/movies/${movieId}/cast`}>Cast</Link></li>
-                <li className="list-item"><Link to={`/movies/${movieId}/reviews`}>Reviews</Link></li>
+                <li className="list-item"><Link to={`/movies/${movieId}/cast`} state={{from}}>Cast</Link></li>
+                <li className="list-item"><Link to={`/movies/${movieId}/reviews`} state={{from}}>Reviews</Link></li>
                     <Outlet />
 
             </div>
