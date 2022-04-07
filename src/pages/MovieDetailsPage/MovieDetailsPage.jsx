@@ -44,7 +44,7 @@ const [state, setState] = useState({
     console.log(from)
     
     const navigate = useNavigate();
-    const goBack = () => navigate(-1);    
+    const goBack = () => navigate(from);    
     
     
     return (
