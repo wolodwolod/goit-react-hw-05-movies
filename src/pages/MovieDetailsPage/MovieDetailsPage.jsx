@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../shared/services/movies";
 import MovieDetails from "./MovieDetails";
 import s from "./movie-details.module.scss";
@@ -39,8 +39,13 @@ const [state, setState] = useState({
 
     const { data, loading } = state;
 
+    const location = useLocation()
+    const from = location.state?.from;
+    console.log(from)
+    
     const navigate = useNavigate();
-    const goBack = () => navigate(-1);
+    const goBack = () => navigate(from);    
+    
     
     return (
         <main>
@@ -49,7 +54,11 @@ const [state, setState] = useState({
                 {loading && <p>...Loading</p>}
                
         <button className={s.button} onClick={goBack}>&#8592; Go back</button>
-                {Boolean(Object.keys(data).length) && <MovieDetails data={data} />}    
+                {Boolean(Object.keys(data).length) && <MovieDetails data={data} />}
+
+                <li className="list-item"><Link to={`/movies/${movieId}/cast`}>Cast</Link></li>
+                <li className="list-item"><Link to={`/movies/${movieId}/reviews`}>Reviews</Link></li>
+                    <Outlet />
 
             </div>
         </main>

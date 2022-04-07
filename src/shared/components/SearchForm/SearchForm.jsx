@@ -5,7 +5,7 @@ const SearchForm = ({onSubmit}) => {
     // console.log("Render")
     
     const [form, setForm] = useState({
-        search: ""
+        query: ""
     });
 
     const inputRef = createRef(null);
@@ -24,21 +24,21 @@ const SearchForm = ({onSubmit}) => {
                 [name]: value
             }
         });
-console.log(form.search)
+console.log(form.query)
     }
 
     const handleSubmit = (e)=> {
         e.preventDefault();
         onSubmit(form);
         setForm({
-            search: ""
+            query: ""
         });
-        console.log(form.search); 
+        console.log(form.query); 
     }
 
     return (
         <form className={s.searchForm } onSubmit={handleSubmit} action="">
-            <input ref={inputRef} onChange={handleChange} value={form.search} type="text" name="search" placeholder="Movie title" />
+            <input ref={inputRef} onChange={handleChange} value={form.query} type="text" name="query" placeholder="Movie title" />
             <button type="submit">Search</button>
         </form>
     )

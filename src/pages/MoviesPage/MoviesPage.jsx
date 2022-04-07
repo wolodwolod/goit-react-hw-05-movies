@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 // import { useRef } from "react";
 // import MoviesList from "pages/MoviesList";
 import { searchMovies } from "../../shared/services/movies";
@@ -8,12 +9,15 @@ import s from "./movies-page.module.scss";
 
 const MoviesPage = () => {
     const [state, setState] = useState({
-        query: "",
+        // query: "",
         movies: [],
         loading: false,
         err: null
     });
-    const { query, movies, loading, error } = state;
+    const { movies, loading, error } = state;
+
+    const [queryParams, setQueryParams] = useSearchParams();
+    const query = queryParams.get("query");
 
     // const firstRenderRef = useRef(true);
 
@@ -47,17 +51,12 @@ const MoviesPage = () => {
         
     }, [query]);
 
-    const changeQuery = useCallback(({ search }) => {
-        setState({
-            ...state,
-            query: search
-        }
-           
-        )
+    const changeQuery = useCallback(({ query }) => {
+        setQueryParams({ query })
         // console.log(search);
         // console.log(query);
         
-    }, [state]);
+    }, [setQueryParams]);
 
 
     return (
